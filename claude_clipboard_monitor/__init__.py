@@ -8,6 +8,8 @@ __author__ = "Your Name"
 __email__ = "your.email@example.com"
 
 from .monitor import ClipboardMonitor
+from .drag_monitor import DragClipboardMonitor
 from .installer import install_claude_code_config
+from .drag_simulator import DragSimulator
 
-__all__ = ["ClipboardMonitor", "install_claude_code_config"]
+__all__ = ["ClipboardMonitor", "DragClipboardMonitor", "install_claude_code_config", "DragSimulator"]

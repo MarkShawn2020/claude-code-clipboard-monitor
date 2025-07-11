@@ -31,6 +31,7 @@ dependencies = [
     "pillow>=8.0.0",
     "pyperclip>=1.8.0",
     "psutil>=5.8.0",
+    "pyautogui>=0.9.52",
 ]
 
 [project.urls]
@@ -40,6 +41,7 @@ Issues = "https://github.com/yourusername/claude-clipboard-monitor/issues"
 
 [project.scripts]
 claude-clipboard-monitor = "claude_clipboard_monitor.cli:main"
+claude-clipboard-drag = "claude_clipboard_monitor.drag_monitor:main"
 claude-clipboard-config = "claude_clipboard_monitor.installer:main"
 
 [project.optional-dependencies]
@@ -48,6 +50,18 @@ dev = [
     "black>=21.0.0",
     "flake8>=3.8.0",
     "mypy>=0.800",
+]
+windows = [
+    "pywin32>=227; sys_platform == 'win32'",
+]
+macos = [
+    "pyobjc-framework-Quartz>=7.0; sys_platform == 'darwin'",
+    "pyobjc-framework-Cocoa>=7.0; sys_platform == 'darwin'",
+]
+all = [
+    "pywin32>=227; sys_platform == 'win32'",
+    "pyobjc-framework-Quartz>=7.0; sys_platform == 'darwin'",
+    "pyobjc-framework-Cocoa>=7.0; sys_platform == 'darwin'",
 ]
 
 [tool.setuptools]
